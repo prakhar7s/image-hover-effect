@@ -1,0 +1,99 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to top, rgba(11, 2, 22, 0.986), rgba(0, 0, 0, 1));
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  flex-flow: wrap;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.container {
+  position: relative;
+  height: 200px;
+  width: 300px;
+  pointer-events: all;
+  margin: 30px 20px;
+}
+
+.container img {
+  width: 300px;
+  height: 200px;
+  background-position: center;
+  background-size: contain;
+  border: 1px solid rgba(255, 255, 255, 0.849);
+  transition: 800ms all linear;
+}
+
+.overlay {
+  background-color: rgba(255, 255, 255, 0.05);
+  position: absolute;
+  height: 140px;
+  width: 250px;
+  top: 20%;
+  left: 80%;
+  width: 10%;
+  transition: 500ms all ease-in;
+  border-left: 5px solid rgba(0, 0, 0, 0.774);
+  opacity: 0;
+  backdrop-filter: blur(8px);
+}
+
+.container h2 {
+  position: absolute;
+  opacity: 0;
+  top: 45px;
+  left: 45px;
+  transform: translateX(100px);
+  transition: 800ms all linear;
+  width: 70%;
+  overflow: hidden;
+  white-space: pre-wrap;
+  text-overflow: ellipsis;
+  z-index: 1;
+  font-weight: 400;
+}
+
+.container p {
+  position: absolute;
+  bottom: 30px;
+  left: 45px;
+  opacity: 0;
+  transform: translate(0, 50px);
+  transition: 800ms all linear;
+  width: 70%;
+  height: 80px;
+  z-index: 1;
+  font-size: 18px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.829);
+}
+
+.container:hover img {
+  opacity: 0.7;
+}
+
+.container:hover .overlay {
+  width: 80%;
+  left: 10%;
+  right: 10%;
+  opacity: 1;
+}
+
+.container:hover h2 {
+  opacity: 1;
+  transform: translateX(0px);
+}
+.container:hover p {
+  opacity: 1;
+  transform: translateY(0px);
+}
